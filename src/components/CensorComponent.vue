@@ -181,8 +181,10 @@ const fetchSensorData = async () => {
   columnClass.value = isWatering ? 'col-sm-4' : 'col-sm-3'
 
   try {
-    const latest = await axios.get(`http://localhost:8086/api/sensor/latest?code=${apiKey}`)
-    const history = await axios.get(`http://localhost:8086/api/sensor/allbycode?code=${apiKey}`)
+    // const latest = await axios.get(`http://localhost:8086/api/sensor/latest?code=${apiKey}`)
+    // const history = await axios.get(`http://localhost:8086/api/sensor/allbycode?code=${apiKey}`)
+    const latest = await axios.get(`http://34.41.43.239:8086/api/sensor/latest?code=${apiKey}`)
+    const history = await axios.get(`http://34.41.43.239:8086/api/sensor/allbycode?code=${apiKey}`)
     // showWarning.value = !displayData.value || displayData.value.length === 0
     const data = latest.data.payload
     const apicode = data.code

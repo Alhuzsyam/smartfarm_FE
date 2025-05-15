@@ -91,7 +91,8 @@ const imageSrc = computed(() => {
 
 const checkRelay = async () => {
   try {
-    const res = await axios.get('http://localhost:8086/api/relay/getByCode', {
+    // const res = await axios.get('http://localhost:8086/api/relay/getByCode', {
+    const res = await axios.get('http://34.41.43.239:8086/api/relay/getByCode', {
       params: { code },
     })
     relayExists.value = !!res.data.payload

@@ -40,7 +40,8 @@
       <div class="card-body">
         <h5 class="card-title">🌱 Insert Data Sensor</h5>
         <p><strong>Endpoint:</strong></p>
-        <code>POST http://localhost:8086/api/sensor/create</code>
+        <!-- <code>POST http://localhost:8086/api/sensor/create</code> -->
+        <code>POST http://34.41.43.239:8086/api/sensor/create</code>
 
         <p class="mt-3"><strong>Payload JSON:</strong></p>
         <pre class="bg-light p-3 rounded small">

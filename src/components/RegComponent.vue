@@ -115,7 +115,8 @@ const handleRegist = async () => {
   showError.value = false
 
   try {
-    const response = await axios.post('http://localhost:8086/api/auth/signup', {
+    // const response = await axios.post('http://localhost:8086/api/auth/signup', {
+    const response = await axios.post('http://34.41.43.239:8086/api/auth/signup', {
       username: username.value,
       password: password.value,
       roles: role.value,
