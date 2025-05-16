@@ -109,7 +109,8 @@ const addRelay = async () => {
   }
 
   try {
-    const response = await axios.post('http://localhost:8086/api/relay/save', payload)
+    // const response = await axios.post('http://localhost:8086/api/relay/save', payload)
+    const response = await axios.post('http://34.41.43.239:8086/api/relay/save', payload)
     console.log('Relay created:', response.data)
     alert('Relay berhasil dibuat!')
     relayExists.value = true
@@ -125,7 +126,8 @@ onMounted(() => {
 const toggleRelay = async (val) => {
   try {
     const response = await axios.put(
-      `http://localhost:8086/api/relay/updateValByCode`,
+      // `http://localhost:8086/api/relay/updateValByCode`,
+      `http://34.41.43.239:8086/api/relay/updateValByCode`,
       {},
       {
         params: {
