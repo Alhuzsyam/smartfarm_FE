@@ -41,7 +41,7 @@
         <h5 class="card-title">🌱 Insert Data Sensor</h5>
         <p><strong>Endpoint:</strong></p>
         <!-- <code>POST http://localhost:8086/api/sensor/create</code> -->
-        <code>POST http://34.41.43.239:8086/api/sensor/create</code>
+        <code>POST http://43.165.198.49:8086/api/sensor/create</code>
 
         <p class="mt-3"><strong>Payload JSON:</strong></p>
         <pre class="bg-light p-3 rounded small">
@@ -93,7 +93,7 @@ const apiKey = localStorage.getItem('api')
 // Ambil data sensor saat komponen dimount
 onMounted(async () => {
   try {
-    const response = await axios.get(`http://localhost:8080/api/sensor/latest?code=${apiKey}`, {
+    const response = await axios.get(`http://43.165.198.49:8086/api/sensor/latest?code=${apiKey}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

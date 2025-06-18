@@ -79,7 +79,7 @@ import { ref, onMounted, computed } from 'vue'
 import axios from 'axios'
 
 const relayExists = ref(false)
-const code = localStorage.getItem('api') || 'RELAY001'
+const code = localStorage.getItem('api')
 const roles = localStorage.getItem('roles') || '' // ambil roles dari localStorage
 
 // Tentukan source gambar berdasarkan roles
@@ -92,7 +92,7 @@ const imageSrc = computed(() => {
 const checkRelay = async () => {
   try {
     // const res = await axios.get('http://localhost:8086/api/relay/getByCode', {
-    const res = await axios.get('http://34.41.43.239:8086/api/relay/getByCode', {
+    const res = await axios.get('http://43.165.198.49:8086/api/relay/getByCode', {
       params: { code },
     })
     relayExists.value = !!res.data.payload
@@ -109,8 +109,9 @@ const addRelay = async () => {
   }
 
   try {
-    // const response = await axios.post('http://localhost:8086/api/relay/save', payload)
-    const response = await axios.post('http://34.41.43.239:8086/api/relay/save', payload)
+    const response = await axios.post('http://43.165.198.49:8086/api/relay/save', payload)
+    console.log(payload)
+    // const response = await axios.post('http://43.165.198.49:8086/api/relay/save', payload)
     console.log('Relay created:', response.data)
     alert('Relay berhasil dibuat!')
     relayExists.value = true
@@ -127,7 +128,7 @@ const toggleRelay = async (val) => {
   try {
     const response = await axios.put(
       // `http://localhost:8086/api/relay/updateValByCode`,
-      `http://34.41.43.239:8086/api/relay/updateValByCode`,
+      `http://43.165.198.49:8086/api/relay/updateValByCode`,
       {},
       {
         params: {
