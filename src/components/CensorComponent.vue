@@ -368,7 +368,7 @@ const downloadData = async () => {
   const isWatering = roles.includes('watering')
 
   try {
-    const res = await axios.get(`http://localhost:8086/api/sensor/allbycode?code=${apiKey}`)
+    const res = await axios.get(`http://43.165.198.49:8086/api/sensor/allbycode?code=${apiKey}`)
     const data = res.data.payload || []
 
     let worksheetData
@@ -408,7 +408,7 @@ const deleteData = async () => {
 
   try {
     const response = await axios.delete(
-      `http://localhost:8086/api/sensor/deletebycode?code=${apiKey}`,
+      `http://43.165.198.49:8086/api/sensor/deletebycode?code=${apiKey}`,
     )
     if (response.status === 200) {
       alert('Data successfully deleted!')
