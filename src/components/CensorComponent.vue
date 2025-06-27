@@ -183,8 +183,8 @@ const fetchSensorData = async () => {
   try {
     // const latest = await axios.get(`http://localhost:8086/api/sensor/latest?code=${apiKey}`)
     // const history = await axios.get(`http://localhost:8086/api/sensor/allbycode?code=${apiKey}`)
-    const latest = await axios.get(`http://43.165.198.49:8086/api/sensor/latest?code=${apiKey}`)
-    const history = await axios.get(`http://43.165.198.49:8086/api/sensor/allbycode?code=${apiKey}`)
+    const latest = await axios.get(`http://localhost:8086/api/sensor/latest?code=${apiKey}`)
+    const history = await axios.get(`http://localhost:8086/api/sensor/allbycode?code=${apiKey}`)
     // showWarning.value = !displayData.value || displayData.value.length === 0
     const data = latest.data.payload
     const apicode = data.code
@@ -289,49 +289,49 @@ const fetchSensorData = async () => {
         {
           label: 'Soil Temp',
           data: historyData.map((d) => d.soilTemperature),
-          borderColor: '#0096c7',
+          borderColor: '#ffeaa7',
           backgroundColor: 'rgba(0,150,199,0.2)',
           fill: true,
         },
         {
           label: 'Soil Moisture',
           data: historyData.map((d) => d.soilMoisture),
-          borderColor: '#48cae4',
+          borderColor: '#55efc4',
           backgroundColor: 'rgba(72,202,228,0.2)',
           fill: true,
         },
         {
           label: 'Soil pH',
           data: historyData.map((d) => d.soilPh),
-          borderColor: '#90e0ef',
+          borderColor: '#fab1a0',
           backgroundColor: 'rgba(144,224,239,0.2)',
           fill: true,
         },
         {
           label: 'Conductivity',
           data: historyData.map((d) => d.soilConductivity),
-          borderColor: '#ade8f4',
+          borderColor: '#ff7675',
           backgroundColor: 'rgba(173,232,244,0.2)',
           fill: true,
         },
         {
           label: 'Nitrogen',
           data: historyData.map((d) => d.nitrogen),
-          borderColor: '#caf0f8',
+          borderColor: '#74b9ff',
           backgroundColor: 'rgba(202,240,248,0.2)',
           fill: true,
         },
         {
           label: 'Phosphorus',
           data: historyData.map((d) => d.phosphorus),
-          borderColor: '#8ecae6',
+          borderColor: '#dfe6e9',
           backgroundColor: 'rgba(142,202,230,0.2)',
           fill: true,
         },
         {
           label: 'Potassium',
           data: historyData.map((d) => d.potassium),
-          borderColor: '#219ebc',
+          borderColor: '#a29bfe',
           backgroundColor: 'rgba(33,158,188,0.2)',
           fill: true,
         },
@@ -368,7 +368,7 @@ const downloadData = async () => {
   const isWatering = roles.includes('watering')
 
   try {
-    const res = await axios.get(`http://43.165.198.49:8086/api/sensor/allbycode?code=${apiKey}`)
+    const res = await axios.get(`http://localhost:8086/api/sensor/allbycode?code=${apiKey}`)
     const data = res.data.payload || []
 
     let worksheetData
@@ -408,7 +408,7 @@ const deleteData = async () => {
 
   try {
     const response = await axios.delete(
-      `http://43.165.198.49:8086/api/sensor/deletebycode?code=${apiKey}`,
+      `http://localhost:8086/api/sensor/deletebycode?code=${apiKey}`,
     )
     if (response.status === 200) {
       alert('Data successfully deleted!')
